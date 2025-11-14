@@ -4,7 +4,6 @@ import "./App.css";
 
 function App() {
   const [name, Setname] = useState("");
-  const [Pais, SetPais] = useState(null); 
   const navigate = useNavigate();
 
   return (
