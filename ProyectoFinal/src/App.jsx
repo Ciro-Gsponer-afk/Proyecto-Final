@@ -3,15 +3,21 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const [name, Setname] = useState("");
-  const navigate = useNavigate();
 
   return (
     <>
-      <h1>INFO PAISES</h1>
+    <div className="Bienvenida">
+      <h1>Bienvenidos</h1></div>
+    
+    <div className="Cuestionario">
+        <input />
+        <button > Investigar </button>
+    </div>
 
-      <input type="text"onChange={(e) => Setname(e.target.value)} placeholder="Escribe un país..."/>
-      <button onClick={() => navigate(`/${name}`)}>Mostrar País</button>
+<div className="Paises" > 
+
+
+</div>    
     </>
   );
 }
