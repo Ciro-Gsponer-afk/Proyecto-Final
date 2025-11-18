@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './Data.css';
 
 const Data = () => {
   const { Place_id } = useParams();
@@ -13,14 +14,20 @@ const Data = () => {
   }, [Place_id]);
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="DataContainer">
       <h2>Datos del clima</h2>
       {datos ? (
-        <div>
-          <p><strong>Ciudad:</strong> {datos.name}</p>
-          <p><strong>Temperatura actual:</strong> {datos.current.temperature} °C</p>
-          <p><strong>Condición:</strong> {datos.current.summary}</p>
-        </div>
+        <>
+          <div className="DataItem"><i className="wi wi-strong-wind"></i>Velocidad del viento: {datos.current.wind.speed} Km/h</div>
+          <div className="DataItem"><i className="wi wi-direction-up"></i>Ángulo del viento: {datos.current.wind.angle}°</div>
+          <div className="DataItem"><i className="wi wi-wind"></i>Dirección del viento: {datos.current.wind.dir}</div>
+          <div className="DataItem"><i className="wi wi-time-3"></i>Uso horario: {datos.timezone}</div>
+          <div className="DataItem"><i className="wi wi-barometer"></i>Latitud: {datos.lat}</div>
+          <div className="DataItem"><i className="wi wi-barometer"></i>Longitud: {datos.lon}</div>
+          <div className="DataItem"><i className="wi wi-cloudy"></i>Índice de nubosidad: {datos.current.cloud_cover}%</div>
+          <div className="temperature">{datos.current.temperature} °C</div>
+          <div className="condition">{datos.current.summary}</div>
+        </>
       ) : (
         <p>Cargando datos...</p>
       )}

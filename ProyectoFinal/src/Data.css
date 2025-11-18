@@ -1,0 +1,76 @@
+/* Fondo general */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+  background-attachment: fixed;
+  color: #333;
+}
+
+/* Tarjeta de clima */
+.DataContainer {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(to bottom right, #ffffffcc, #e0f7ffcc);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease;
+}
+
+/* Título */
+.DataContainer h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0077b6;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Ítems de clima */
+.DataItem {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.DataItem i {
+  font-size: 1.5rem;
+  color: #0077b6;
+  margin-right: 0.8rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Temperatura destacada */
+.temperature {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #023e8a;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Condición del clima */
+.condition {
+  font-style: italic;
+  color: #555;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
