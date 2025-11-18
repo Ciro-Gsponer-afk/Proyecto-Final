@@ -9,7 +9,7 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`https://www.meteosource.com/api/v1/free/find_places?text=${Lugar}&language=en&key=m4jjqsoiezco6c7lecmmhg8qus818j18w77qmkve`)
+    fetch(`X`)
       .then((response) => response.json())
       .then((data) => SetOpciones(data))
       .catch((error) => console.error("Error al cargar las localidades:", error));
@@ -18,7 +18,7 @@ function App() {
 
   const CambiarURL = (Id) => {
     navigate(`/${Id}`)
-  } 
+  }
 
 
   return (
@@ -27,16 +27,16 @@ function App() {
         <h1>Bienvenidos</h1></div>
 
       <div className="Cuestionario" >
-        <input onChange={(e) => { SetNombre( e.target.value) }} />
-        <button onClick={ () =>{SetLugar(Nombre)  } } > Investigar </button>
+        <input onChange={(e) => { SetNombre(e.target.value) }} />
+        <button onClick={() => { SetLugar(Nombre) }} > Investigar </button>
       </div>
 
       <div className="lugares">
         {Opciones.map((Lugar) =>
-          <div className="Opcion" onClick={ () => CambiarURL(Lugar.place_id)} >
+          <div className="Opcion" onClick={() => CambiarURL(Lugar.place_id)} >
             <p> Pais : {Lugar.country}  </p>
             <p> Localidad : {Lugar.adm_area1} </p>
-      </div>
+          </div>
         )}
       </div>
     </>
